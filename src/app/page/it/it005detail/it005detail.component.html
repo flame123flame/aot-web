@@ -1,0 +1,212 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+    <div class="row">
+        <div class="col-sm-6 text-left">
+            <button-back routerLink="/it/it001"></button-back>
+        </div>
+        <div class="col-sm-6 text-right">
+            <button-save routerLink="/it/it001"></button-save>
+            <button-cancel routerLink="/it/it001"></button-cancel>
+        </div>
+    </div>
+    <hr />
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>รหัสผู้ประกอบการ : <span class="text-danger">*</span></p>
+        </div>
+        <div class="col-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ" aria-label="รหัสผู้ประกอบการ" aria-describedby="button-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" id="button-addon2">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 text-right ">
+            <p>ชื่อผู้ประกอบการ : <span class="text-danger">*</span></p>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกชื่อผู้ประกอบการ" />
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>เลขที่สัญญา :</p>
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-sm" />
+        </div>
+        <div class="col-2 text-right ">
+            <p>ที่อยู่ใบแจ้งหนี้ :</p>
+        </div>
+        <div class="col-4">
+            <textarea class="form-control form-control-sm"></textarea>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>พื้นที่เช่า :</p>
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-sm" />
+        </div>
+        <div class="col-2 text-right ">
+            <p>ประเภทการจ่ายเงิน :</p>
+        </div>
+        <div class="col-4">
+            <select class="form-control form-control-sm">
+        <option>กรุณาเลือกประเภทการจ่ายเงิน</option>
+      </select>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <p>เพิ่มข้อมูลวันที่/เวลา/ห้องฝึกอบรมที่ใช้งาน</p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <button-add (click)="ShowModal()"></button-add>
+                    </div>
+                </div>
+
+                <table id="datatable" class="table table-bordered table-striped table-sm" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>วันที่ใช้งาน</th>
+                            <th>เวลาที่ใช้</th>
+                            <th>ห้องฝึกอบรม CUTE</th>
+                            <th>จำนวนเงิน</th>
+                            <th>หมายเหตุ</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="6">ไม่มีข้อมูล</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 text-left">
+                        <p>รายละเอียดห้องฝึกอบรม CUTE</p>
+                    </div>
+                </div>
+                <table id="datatable" class="table table-bordered table-striped table-sm" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>ห้องฝึกอบรม</th>
+                            <th>อัตราค่าภาระ</th>
+                            <th>หมายเหตุ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="3">ไม่มีข้อมูล</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</app-card>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลวันที่/เวลา/ห้องฝึกอบรมที่ใช้งาน</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="row mt-2">
+                        <div class="col-3 text-right ">
+                            <p>วันที่ใช้งาน :</p>
+                        </div>
+                        <div class="col-7">
+                            <input-calendar></input-calendar>
+                        </div>
+
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-3 text-right ">
+                            <p>เวลาที่ใช้:</p>
+                        </div>
+                        <div class="col-7">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    08.00-16.00
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-3 text-right ">
+                        </div>
+                        <div class="col-7">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    16.00-24.00
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 text-right ">
+                        </div>
+                        <div class="col-7">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    24.00-08.00
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 text-right ">
+                            <p>ห้องฝึกอบรม CUTE :</p>
+                        </div>
+                        <div class="col-7">
+                            <select class="form-control form-control-sm">
+                                <option>ห้องฝึกอบรม 1 (A2-153)</option>
+                              </select>
+                        </div>
+
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-3 text-right ">
+                            <p>หมายเหตุ :</p>
+                        </div>
+                        <div class="col-7">
+                            <textarea name="" class="form-control form-control-sm"></textarea>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button-save (click)="HideModal()"></button-save>
+                <button-cancel (click)="HideModal()"></button-cancel>
+            </div>
+        </div>
+    </div>
+</div>

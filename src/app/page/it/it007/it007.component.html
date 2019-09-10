@@ -1,0 +1,54 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<app-card isButton="false">
+    <div class="row">
+        <div class="col-md-3">
+            <input-calendar></input-calendar>
+        </div>
+
+        <div class="col-md-2">
+            <!-- <input type="text" class="form-control form-control-sm" placeholder="choose a CSV file"> -->
+        </div>
+        <div class="col-md-7 text-right">
+
+
+            <!-- <button-edit></button-edit> -->
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-sm" style="width:100%">
+                <thead class="text-center">
+                    <tr>
+                        <th>ผู้ประกอบการ</th>
+                        <th>วันที่เริ่มใช้งาน</th>
+                        <th>วันที่ใช้เสร็จ</th>
+                        <th> เวลาที่ใช้ 08.00-16.00</th>
+                        <th>เวลาที่ใช้ 16.00-24.00</th>
+                        <th>เวลาที่ใช้ 24.00-08.00</th>
+                        <th>A2-153 (3,750 บาท)</th>
+                        <th>A2-153a (2,000 บาท)</th>
+                        <th>จำนวนเงิน</th>
+                        <th>หมายเหตุ (ผู้จอง)</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nok Air</td>
+                        <td>5 มีนาคม 2561</td>
+                        <td>5 มีนาคม 2561</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>ใช้งาน</td>
+                        <td>- วัน</td>
+                        <td>1 วัน</td>
+                        <td>2,000.00 บาท</td>
+                        <td>สมชาย รักบ้านเกิด</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</app-card>

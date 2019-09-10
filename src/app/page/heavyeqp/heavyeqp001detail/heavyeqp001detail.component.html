@@ -1,0 +1,289 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+  <form [formGroup]="formAddManageHeavyEquipment">
+    <div class="row">
+      <div class="col-sm-6 text-left">
+        <button-back routerLink="/heavyeqp/heavyeqp001"></button-back>
+      </div>
+      <div class="col-sm-6 text-right">
+          <button-save  (click)="onValidate()"></button-save>
+      </div>
+    </div>
+    <hr />
+    <!-- <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>รหัสผู้รับบริการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้รับบริการ" aria-label="รหัสผู้รับบริการ"
+          aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-info" type="button" id="button-addon2"><i class="fa fa-search"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 text-right ">
+      <p>ชื่อผู้รับบริการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกชื่อผู้รับบริการ">
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>เลขที่สัญญาของผู้รับบริการ : </p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-2 text-right ">
+    </div>
+    <div class="col-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          จ่ายโดยผู้รับบริการ
+        </label>
+      </div>
+    </div>
+  </div> -->
+    <div class="row mt-2">
+      <div class="col-6">
+        <!-- --------------topcal-------------------- -->
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>รหัสผู้ประกอบการ : <span class="text-danger">*</span></p>
+          </div>
+          <div class="col-8">
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ"
+                    aria-label="รหัสผู้ประกอบการ" aria-describedby="button-addon2" formControlName="customerCode"
+                    maxlength="90">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" id="button-addon2"
+                      (click)="openModalCustomer(customerModal)"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ชื่อผู้ประกอบการ : <span class="text-danger">*</span></p>
+          </div>
+          <div class="col-8">
+              <input type="text" class="form-control form-control-sm" formControlName="customerName" maxlength="90" readonly>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+              <p>สาขา : <span class="text-danger">*</span></p>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control form-control-sm" formControlName="customerBranch" maxlength="190"
+                readonly>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>เลขที่สัญญา :</p>
+          </div>
+          <div class="col-8">
+              <input type="text" class="form-control form-control-sm" formControlName="contractNo" list="contractNo"
+              placeholder="กรุณากรอกเลขที่สัญญา" maxlength="90">
+            <datalist id="contractNo">
+              <option *ngFor="let items of contractNoList" [value]="items.contractNo">{{items.contractNo}}</option>
+            </datalist>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>รวมเงินจากการใช้งาน :</p>
+          </div>
+          <div class="col-6">
+            <input class="form-control form-control-sm" type="number" formControlName="allFees" 
+            (keyup)="sum()" >
+          </div>
+          <div class="col-2 ">
+            <p>บาท</p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ภาษีมูลค่าเพิ่ม :</p>
+          </div>
+          <div class="col-6">
+            <input class="form-control form-control-sm" formControlName="vat" >
+          </div>
+          <div class="col-2 ">
+            <p>บาท</p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ค่าปฎิบัติงานล่วงเวลาของพนักงาน ทอท. :</p>
+          </div>
+          <div class="col-6">
+            <input class="form-control form-control-sm" type="number" formControlName="driverRates" (keyup)="sum()" >
+          </div>
+          <div class="col-2 ">
+            <p>บาท</p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>จำนวนเงินรวม :</p>
+          </div>
+          <div class="col-6">
+            <input class="form-control form-control-sm" formControlName="totalMoney">
+          </div>
+          <div class="col-2 ">
+            <p>บาท</p>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ประเภทการชำระเงิน :</p>
+          </div>
+          <div class="col-8">
+            <select class="form-control form-control-sm" formControlName="paymentType" >
+                <option value="" hidden>กรุณาเลือกประเภทการชำระเงิน</option>
+                <option *ngFor="let item of paymentType" [ngValue]="item.descTh1.trim()">{{item.descTh1.trim()}}</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>รายละเอียด :</p>
+          </div>
+          <div class="col-8">
+            <textarea class="form-control form-control-sm"></textarea>
+          </div>
+        </div>
+
+        <!-- --------------topcal-------------------- -->
+      </div>
+      <div class="col-6">
+        <!-- --------------topcal-------------------- -->
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>เครื่องทุ่นแรง :</p>
+          </div>
+          <div class="col-8">
+            <select class="form-control form-control-sm" formControlName="paymentType"  (change)="onChangeType($event)" >
+                <option value="" hidden>กรุณาเลือกเครื่องทุ่นแรง</option>
+                <option *ngFor="let item of eqplist" value="{{item.manageHeavyEquipmentId}}">{{item.equipmentType.trim()}}</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>หมายเลข :</p>
+          </div>
+          <div class="col-8">
+            <input class="form-control form-control-sm" formControlName="numberLicensePlate">
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ทะเบียนรถ :</p>
+          </div>
+          <div class="col-8">
+            <input class="form-control form-control-sm" formControlName="licensePlate">
+          </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-4 text-right ">
+              <p>ผู้รับผิดชอบ :</p>
+            </div>
+            <div class="col-8">
+              <input class="form-control form-control-sm" formControlName="responsiblePerson">
+            </div>
+          </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right " style="margin-top: 32px;">
+            <p>วันเวลาที่เริ่ม :</p>
+          </div>
+          <div class="col-4" style="margin-top: 32px;">
+            <input-calendar (changeDate)="setDate($event)"></input-calendar>
+          </div>
+          <div class="col-4 ">
+            <timepicker (keyup)="setTime($event)"></timepicker>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right " style="margin-top: 32px;">
+            <p>วันเวลาที่สิ้นสุด :</p>
+          </div>
+          <div class="col-4" style="margin-top: 32px;">
+            <input-calendar></input-calendar>
+          </div>
+          <div class="col-4">
+            <timepicker></timepicker>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <div class="col-4 text-right ">
+            <p>ระยะเวลาที่ใช้ :</p>
+          </div>
+          <div class="col-8">
+            <input class="form-control form-control-sm" />
+          </div>
+        </div>
+
+        <!-- --------------topcal-------------------- -->
+      </div>
+    </div>
+  </form>
+</app-card>
+
+
+<!-- saveModal -->
+<modal-confirm #saveModal (onConfirm)="onSave()"></modal-confirm>
+<!-- errorModal -->
+<modal-error #errorModal></modal-error>
+<!-- errorModal -->
+<modal-success #successModal></modal-success>
+
+<!-- customerModal -->
+<ng-template #customerModal>
+    <div class="modal-header">
+      <p>เลือก ผู้ประกอบการ</p>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="onCloseModalCustomer()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <table id="datatableCustomer" class="table table-bordered table-striped table-sm" style="width:100%">
+        <thead class="text-center">
+          <tr>
+            <th class="text-center">รหัสผู้ประกอบการ</th>
+            <th class="text-center">ชื่อผู้ประกอบการ</th>
+            <th class="text-center">รหัสสาขา</th>
+            <th class="text-center">ทีอยู่</th>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="modal-footer text-right">
+      <button-close (click)="onCloseModalCustomer()"></button-close>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,113 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+  <div class="row ">
+    <div class="col-md-6 text-left">
+      <button-back routerLink="/communi/communi002"></button-back>
+    </div>
+    <div class="col-md-6 text-right">
+      <button-save (click)="confirm('UPDATE')"></button-save>
+      <button-cancel routerLink="/communi/communi001"></button-cancel>
+    </div>
+  </div>
+  <hr>
+
+  <form [formGroup]="formGroup">
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>รหัสผู้ประกอบการ : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" formControlName="entreprenuerCode" readonly>
+      </div>
+      <div class="col-2 text-right ">
+        <p>ชื่อผู้ประกอบการ : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" formControlName="entreprenuerName" readonly>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>สาขา : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" formControlName="customerBranch" readonly>
+      </div>
+      <div class="col-2 text-right ">
+        <p>เลขที่สัญญา : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" formControlName="contractNo" readonly>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>รหัสเครื่องที่ต้องการยกเลิก : </p>
+      </div>
+      <div class="col-4">
+        <select class="form-control form-control-sm" formControlName="mobileSerialNo">
+          <option formArrayName="mobileSerialNoList" *ngFor="let dtl of mobileSerialNoList.controls; let i=index"
+            [value]="dtl.get('mobileSerialNo').value">{{ dtl.get('mobileSerialNo').value }}
+          </option>
+        </select>
+      </div>
+      <!-- <select class="selectpicker" multiple data-live-search="true">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Relish</option>
+      </select> -->
+      <div class="col-2 text-right ">
+        <p> อัตราค่าภาระ ค่าประกัน : </p>
+      </div>
+      <div class="col-3">
+        <input type="text" class="form-control form-control-sm" value="67200.00" formControlName="insuranceRates"
+          readonly>
+      </div>
+      <div class="col-1 ">
+        <p> บาท </p>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>วันที่ยกเลิก : </p>
+      </div>
+      <div class="col-4">
+        <input-calendar (changeDate)="setDate($event)" #calendar1></input-calendar>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>ค่าเสียหาย : </p>
+      </div>
+
+      <div class="col-10">
+        <textarea class="form-control form-control-sm" formControlName="description"></textarea>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>หมายเหตุ : </p>
+      </div>
+
+      <div class="col-10">
+        <textarea class="form-control form-control-sm" formControlName="remark"></textarea>
+        <!-- คืนเงินประกันเมื่อผู้ใช้แจ้งยกเลิกโดยไม่มีหนี้สินค้างชำระ -->
+      </div>
+    </div>
+  </form>
+</app-card>
+
+<!-- saveModal -->
+<modal-confirm #saveModal (onConfirm)="update()">
+</modal-confirm>
+<!-- successModal -->
+<modal-success #successModal>
+</modal-success>
+<!-- errorModal -->
+<modal-error #errorModal>
+</modal-error>

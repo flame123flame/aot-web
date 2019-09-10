@@ -1,0 +1,58 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="บันทึกข้อมูลไฟฟ้า" isButton="false">
+    <div class="row">
+        <div class="col-md-12 text-right">
+     
+            <button-excel wording="ส่งข้อมูลเข้าระบบ"></button-excel>
+            <button-add routerLink="/it/it009detail"></button-add>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-striped table-sm" style="width:100%">
+                <thead class="text-center">
+                    <tr>
+                        <th>ผู้ประกอบการ</th>
+                        <th>เลขที่สัญญา</th>
+                        <th>ประเภท</th>
+                        <th>อัตราค่าภาระ </th>
+                        <th>จำนวน</th>
+                        <th>จำนวนเงิน</th>
+                        <th>จำนวนเงิน(รวมภาษีมูลค่าเพิ่ม)</th>
+                        <th>วันที่เริ่มใช้งาน</th>
+                        <th>วันที่ยกเลิก</th>
+                        <th>สถานะ</th>
+                        <th>เลขที่ใบเสร็จ/เลขที่ใบแจ้งหนี้</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bangkok Airways</td>
+                        <td>00001358</td>
+                        <td >ค่าบริการ Staff Page, ค่าบริการ Public Page</td>
+                        <td align="right">2100.00 บาท</td>
+                        <td align="center">2</td>
+                        <td align="right">4200 บาท</td>
+                        <td align="right">4494 บาท</td>
+                        <td align="center">05/08/2561 22:23</td>
+                        <td align="center">-</td>
+                        <td align="center">ใช้งาน</td>
+                        <td align="center">
+                            <button-icon color="info"><i class="fa fa-search" aria-hidden="true"></i></button-icon>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</app-card>
+<app-modal [modalId]="'modalId'" [header]="'Confirm การลบข้อมูลลูกค้านิติบุคคล'">
+    <div body>
+        คุณต้องการลบข้อมูลลูกค้านิติบุคคลใช่หรือไม่
+    </div>
+    <div footer>
+        <button-confirm></button-confirm>
+        <button-cancel></button-cancel>
+    </div>
+</app-modal>

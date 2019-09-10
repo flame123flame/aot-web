@@ -1,0 +1,129 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <button-back routerLink="/firebrigade/firebrigade001"></button-back>
+    </div>
+    <div class="col-sm-6 text-right">
+      <button-save routerLink="/firebrigade/firebrigade001"></button-save>
+      <button-cancel routerLink="/firebrigade/firebrigade001"></button-cancel>
+    </div>
+  </div>
+  <hr>
+
+
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>รหัสผู้ประกอบการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ" aria-label="รหัสผู้ประกอบการ"
+          aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-info" type="button" id="button-addon2"><i class="fa fa-search"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 text-right ">
+      <p>หน่วยงาน/ผู้ประกอบการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกหน่วยงาน/ผู้ประกอบการ">
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>เลขที่สัญญา : </p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-2 text-right ">
+      <p>ที่อยู่สำหรับจัดส่งเอกสาร : </p>
+    </div>
+    <div class="col-4">
+     <textarea class="form-control form-control-sm"></textarea>
+    </div>
+  </div>
+
+
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>หลักสูตรที่ขอใช้จัดฝึกอบรม : </p>
+    </div>
+    <div class="col-4">
+     <select class="form-control form-control-sm">
+       <option>หลักสูตรที่ขอใช้จัดฝึกอบรม</option>
+     </select>
+    </div>
+    <div class="col-2 text-right ">
+      <p>วันที่จัดฝึกอบรม : </p>
+    </div>
+    <div class="col-4">
+        <input-calendar></input-calendar>
+    </div>
+  </div>
+
+
+
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>จำนวนผู้เข้ารับการฝึกอบรม :</p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-1 ">
+      <p>คน</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>อัตราค่าภาระ :</p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-1 ">
+      <p>บาท</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>ภาษีมูลค่าเพิ่ม
+        :</p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-1 ">
+      <p>บาท</p>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>รวมเงิน
+        :</p>
+    </div>
+    <div class="col-4">
+      <input class="form-control form-control-sm">
+    </div>
+    <div class="col-1 ">
+      <p>บาท</p>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>หมายเหตุ :</p>
+    </div>
+    <div class="col-4">
+      <textarea class="form-control form-control-sm"></textarea>
+    </div>
+  </div>
+
+
+</app-card>

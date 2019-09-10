@@ -1,0 +1,53 @@
+
+<app-card header="" isButton="false">
+  <div class="row">
+    <div class="col-md-12 text-right">
+
+      <button-add routerLink="/it/it0104detail"></button-add>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-12">
+      <table class="table table-bordered table-striped table-sm" style="width:100%">
+        <thead class="text-center">
+          <tr>
+            <th>วันที่มีผล</th>
+            <th>	
+              สัญญา(เดือน)</th>
+            <th>ประเภทบริการ</th>
+            <th>จำนวนเงิน</th>
+            <th>วันที่ปรับปรุง </th>
+            <th>ปรับปรุงโดย</th>
+            <th>หมายเหตุ</th>
+      
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/01/2562</td>
+            <td>	
+             	
+ค่าบริการ Staff Page</td>
+            <td>1000.00</td>
+            <td>10 เดือน</td>
+            <td>01/01/2562</td>
+            <td align="center">นาย สมชาย รักบ้านเกิด</td>
+            <td align="center">
+              <button-icon color="info"><i class="fa fa-search" aria-hidden="true"></i></button-icon>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-card>
+<app-modal [modalId]="'modalId'" [header]="'Confirm การลบข้อมูลลูกค้านิติบุคคล'">
+  <div body>
+    คุณต้องการลบข้อมูลลูกค้านิติบุคคลใช่หรือไม่
+  </div>
+  <div footer>
+    <button-confirm></button-confirm>
+    <button-cancel></button-cancel>
+  </div>
+</app-modal>

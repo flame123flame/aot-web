@@ -1,0 +1,55 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<app-card isButton="false">
+  <div class="row">
+    <div class="col-md-3">
+      <input-calendar></input-calendar>
+    </div>
+    <div class="col-md-9 text-right">
+      <button-excel wording="Upload"></button-excel>
+      <button-add routerLink="/garbagedis/garbagedis001detail"></button-add>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped table-sm" style="width:100%">
+        <thead class="text-center">
+          <tr>
+            <th>ผู้ประกอบการ</th>
+            <th>เลขที่สัญญา</th>
+            <th>สถานที่วางถังขยะ</th>
+            <th>พื้นที่เช่า</th>
+            <th>ประเภทขยะ
+              </th>
+            <th>ทั่วไป (กก.)</th>
+            <th>ทั่วไป (บาท)
+              </th>
+            <th>ประเภทถัง</th>
+            <th>จำนวนถัง</th>
+            <th>ค่าใช้จ่าย (บาท)</th>
+            <th>เลขที่ใบแจ้งหนี้</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+         <td>Atos</td>
+         <td>C1-88489</td>
+         <td>ตึก AOB</td>
+         <td>TH-BKK-AOB-05-01</td>
+         <td>เหมาจ่าย</td>
+         <td>30 กก.</td>
+         <td>105.00 บาท</td>
+         <td>-</td>
+         <td>	
+            - ถั</td>
+         <td>105.00 บาท</td>
+         <td align="center">
+                
+            <button-icon  color="info"><i class="fa fa-search" aria-hidden="true"></i></button-icon>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-card>

@@ -1,0 +1,59 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="บันทึกข้อมูลไฟฟ้า" isButton="false">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button-excel></button-excel>
+            <button-excel wording="ส่งข้อมูลเข้าระบบ"></button-excel>
+            <button-add routerLink="/it/it005detail"></button-add>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <table class="table table-bordered table-striped table-sm" style="width:100%">
+                <thead class="text-center">
+                    <tr>
+                        <th>ผู้ประกอบการ</th>
+                        <th>เลขที่สัญญา</th>
+                        <th>จำนวนวัน</th>
+                        <th>ห้อง</th>
+                        <th>วันที่ใช้งาน</th>
+                        <th>08.00-16.00</th>
+                        <th>16.00-24.00</th>
+                        <th>24.00-08.00</th>
+                        <th>จำนวนเงิน</th>
+                        <th>หมายเหตุ (ผู้จอง)</th>
+                        <th>ประเภทการจ่ายเงิน</th>
+                        <th>เลขที่ใบแจ้งหนี้/เลขที่ใบเสร็จ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Nok Air</td>
+                        <td>00001234</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>11,250.00</td>
+                        <td>สมชาย รักบ้านเกิด</td>
+                        <td>ออกใบแจ้งหนี้สิ้นเดือน</td>
+                        <td align="center">
+                            <button-icon color="info"><i class="fa fa-search" aria-hidden="true"></i></button-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</app-card>
+<app-modal [modalId]="'modalId'" [header]="'Confirm การลบข้อมูลลูกค้านิติบุคคล'">
+    <div body>
+        คุณต้องการลบข้อมูลลูกค้านิติบุคคลใช่หรือไม่
+    </div>
+    <div footer>
+        <button-confirm></button-confirm>
+        <button-cancel></button-cancel>
+    </div>
+</app-modal>

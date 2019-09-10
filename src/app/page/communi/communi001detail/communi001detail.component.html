@@ -1,0 +1,175 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+  <div class="row ">
+    <div class="col-md-6 text-left">
+      <!-- <button-back routerLink="/communi/communi001"></button-back> -->
+    </div>
+    <div class="col-md-6 text-right">
+      <button-save (click)="confirm('SAVE')"></button-save>
+      <button-cancel routerLink="/communi/communi001"></button-cancel>
+    </div>
+  </div>
+  <hr>
+  <form [formGroup]="formSave">
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>รหัสผู้ประกอบการ :<span class="text-danger">*</span> </p>
+      </div>
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ"
+            aria-label="รหัสผู้ประกอบการ" aria-describedby="button-addon2" [value]="control('entreprenuerCode').value"
+            readOnly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-info" type="button" id="button-addon2"
+              (click)="openModalCustom(customModal)"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 text-right ">
+        <p>ชื่อผู้ประกอบการ : <span class="text-danger">*</span> </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกชื่อผู้ประกอบการ"
+          [value]="control('entreprenuerName').value" readOnly>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>สาขา : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" placeholder="สาขา"
+          [value]="control('customerBranch').value" readOnly>
+      </div>
+      <div class="col-2 text-right ">
+        <p>เลขที่สัญญา : </p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" list="contractNo" placeholder="เลขที่สัญญา"
+          formControlName="contractNo">
+        <datalist id="contractNo">
+          <option *ngFor="let items of contractNoList" [value]="items.contractNo">{{items.contractNo}}</option>
+        </datalist>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>จำนวนวิทยุมือถือ : <span class="text-danger">*</span> </p>
+      </div>
+      <div class="col-2">
+        <input type="number" class="form-control form-control-sm" formControlName="phoneAmount" (blur)="onBlur($event)">
+      </div>
+      <div class="col-1 ">
+        <p> เครื่อง </p>
+      </div>
+    </div>
+
+    <ng-container formArrayName="mobileSerialNoList" *ngFor="let key of mobileSerialNoList.controls; let i=index">
+      <div class="row mt-2" [formGroupName]="i">
+        <div class="col-2 text-right ">
+          <p>รหัสเครื่องที่ {{ i+1 }} : </p>
+        </div>
+        <div class="col-4">
+          <input type="text" class="form-control form-control-sm" placeholder="รหัสเครื่องที่ {{ i+1 }}"
+            formControlName="mobileSerialNo">
+        </div>
+        <div class="col-4">
+          <button-custom color="danger" icon="fa fa-minus" (click)="removeMobileSerialNo(false, i)"></button-custom>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="row mt-2">
+      <div class="col-6"></div>
+      <div class="col-1 ">
+        <button-custom color="success" icon="fa fa-plus" (click)="addMobileSerialNo(false)"></button-custom>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>ค่าเช่าวิทยุมือถือ : </p>
+      </div>
+      <div class="col-3">
+        <input type="text" class="form-control form-control-sm" value="7200.00" formControlName="chargeRates">
+      </div>
+      <div class="col-1 ">
+        <p> บาท </p>
+      </div>
+      <div class="col-2 text-right ">
+        <p>เงินประกันค่าเช่าวิทยุมือถือ : </p>
+      </div>
+      <div class="col-3">
+        <input type="text" class="form-control form-control-sm" value="60000.00" formControlName="insuranceRates">
+      </div>
+      <div class="col-1 ">
+        <p> บาท </p>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>รวมอัตราค่าภาระ : </p>
+      </div>
+      <div class="col-3">
+        <input type="text" class="form-control form-control-sm" value="67200.00" formControlName="totalChargeRates">
+      </div>
+      <div class="col-1 ">
+        <p> บาท </p>
+      </div>
+      <div class="col-2 text-right ">
+        <p>วันที่ขอใช้บริการ : </p>
+      </div>
+      <div class="col-4">
+        <input-calendar (changeDate)="setDate($event)" #calendar1></input-calendar>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>หมายเหตุ : </p>
+      </div>
+
+      <div class="col-10">
+        <textarea class="form-control form-control-sm"
+          formControlName="remark">คืนเงินประกันเมื่อผู้ใช้แจ้งยกเลิกโดยไม่มีหนี้สินค้างชำระ</textarea>
+      </div>
+    </div>
+  </form>
+</app-card>
+
+<ng-template #customModal>
+  <div class="modal-header">
+    <p>เลือกผู้ประกอบการ </p>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="onCloseModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <table id="datatable" class="table table-bordered table-striped table-sm" style="width:100%">
+      <thead class="text-center">
+        <tr>
+          <th>รหัสผู้ประกอบการ</th>
+          <th style="text-align: center!important">ชื่อผู้ประกอบการ</th>
+          <th style="text-align: center!important">รหัสสาขา</th>
+          <th style="text-align: center!important">ทีอยู่</th>
+          <th>การจัดการ</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="modal-footer text-right">
+    <button-close (click)="onCloseModal()"></button-close>
+  </div>
+</ng-template>
+
+<!-- saveModal -->
+<modal-confirm #saveModal (onConfirm)="save()">
+</modal-confirm>
+<!-- successModal -->
+<modal-success #successModal>
+</modal-success>
+<!-- errorModal -->
+<modal-error #errorModal>
+</modal-error>

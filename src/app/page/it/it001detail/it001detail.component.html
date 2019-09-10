@@ -1,0 +1,116 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+    <div class="row">
+        <div class="col-sm-6 text-left">
+            <button-back routerLink="/it/it001"></button-back>
+        </div>
+        <div class="col-sm-6 text-right">
+            <button-save routerLink="/it/it001"></button-save>
+            <button-cancel routerLink="/it/it001"></button-cancel>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>รหัสผู้ประกอบการ : <span class="text-danger">*</span></p>
+        </div>
+        <div class="col-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ" aria-label="รหัสผู้ประกอบการ" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" id="button-addon2"><i class="fa fa-search"
+                aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 text-right ">
+            <p>ชื่อผู้ประกอบการ : <span class="text-danger">*</span></p>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกชื่อผู้ประกอบการ">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>เลขที่สัญญา : </p>
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-sm">
+        </div>
+        <div class="col-2 text-right ">
+            <p>สถานที่ติดตั้ง : </p>
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-sm" placeholder="">
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>พื้นที่เช่า : </p>
+        </div>
+        <div class="col-4">
+            <input class="form-control form-control-sm">
+        </div>
+        <div class="col-2 text-right ">
+            <p>สถานนะ : </p>
+        </div>
+        <div class="col-4">
+            <select class="form-control form-control-sm">
+            <option>ใช้งาน</option>
+          </select>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>วันที่เริ่มใช้งาน :</p>
+        </div>
+        <div class="col-4">
+            <input-calendar></input-calendar>
+        </div>
+        <div class="col-2 text-right ">
+            <p>วันที่สิ้นสุดการใช้งาน :</p>
+        </div>
+        <div class="col-4">
+            <input-calendar></input-calendar>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-2 text-right ">
+            <p>หมายเหตุ :</p>
+        </div>
+        <div class="col-4">
+            <textarea class="form-control form-control-sm"></textarea>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <p>รายละเอียดอุปกรณ์</p>
+                <table id="datatable" class="table table-bordered table-striped table-sm" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>บริการเครือข่าย</th>
+                            <th>อัตราค่าภาระ</th>
+                            <th>จำนวนจุด/Port</th>
+                            <th>จำนวนเงิน</th>
+                            <th>จำนวนเงิน (รวมภาษีมูลค่าเพิ่ม)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ค่าเช่าใช้จุดเครือข่าย</td>
+                            <td>1000.00 บาท/จุด/เดือน</td>
+                            <td><input type="text" class="form-control form-control-sm"></td>
+                            <td>บาท</td>
+                            <td>บาท</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</app-card>

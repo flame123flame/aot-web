@@ -1,0 +1,86 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<app-card header="ทสภ." isButton="false">
+  <div class="row">
+    <div class="col-sm-6 text-left">
+      <button-back routerLink="/garbagedis/garbagedis001"></button-back>
+    </div>
+    <div class="col-sm-6 text-right">
+      <button-save routerLink="/garbagedis/garbagedis001"></button-save>
+      <button-cancel routerLink="/garbagedis/garbagedis001"></button-cancel>
+    </div>
+  </div>
+  <hr>
+  <div class="row mt-2">
+    <div class="col-2 text-right">
+      <p>รหัสผู้ประกอบการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control form-control-sm" placeholder="ค้นหารหัสผู้ประกอบการ" aria-label="รหัสผู้ประกอบการ"
+          aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-info" type="button" id="button-addon2"><i class="fa fa-search"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 text-right">
+      <p>ชื่อผู้ประกอบการ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกชื่อผู้ประกอบการ">
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>เลขที่สัญญา : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกเลขที่สัญญา">
+    </div>
+    <div class="col-2 text-right ">
+      <p>สถานที่วางถังขยะ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกสถานที่วางถังขยะ">
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-2 text-right ">
+      <p>พื้นที่เช่า : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกพื้นที่เช่า">
+    </div>
+    <div class="col-2 text-right ">
+      <p>ประเภทขยะ
+        : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-4">
+      <select class="form-control form-control-sm">
+        <option>กรุณาเลือกประเภทขยะ</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mt-2">
+      <div class="col-2 text-right ">
+        <p>รวมอัตราค่าภาระ : <span class="text-danger">*</span></p>
+      </div>
+      <div class="col-4">
+        <input type="text" class="form-control form-control-sm" placeholder="กรุณากรอกรวมอัตราค่าภาระ">
+      </div>
+      <div class="col-1  ">
+          <p>บาท</p>
+        </div>
+    </div>
+  <div class="row mt-2">
+
+    <div class="col-2 text-right ">
+      <p>หมายเหตุ : <span class="text-danger">*</span></p>
+    </div>
+    <div class="col-10">
+      <textarea class="form-control form-control-sm">ยกเว้นการเรียกเก็บค่าบริการกำจัดขยะสำหรับหน่วยงานราชการต่างๆที่ปฎิบัติงานภายในอาคารผู้โดยสารและเขตปลอดอากรภายใน ทสภ. และ ผู้ประกอบการที่เช่าพื้นที่ที่มีการเรียกเก็บค่าธรรมเนียมการใช้บริการในอาคารแล้ว</textarea>
+    </div>
+  </div>
+
+</app-card>
